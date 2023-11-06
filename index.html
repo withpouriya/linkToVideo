@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سینمای خاندان اودین</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg-gray-100 text-gray-900 flex items-center justify-center h-screen p-4"
+  >
+    <div class="container mx-auto max-w-md">
+      <h1 class="text-3xl font-bold text-center mb-6">سینمای خاندان اودین</h1>
+
+      <div class="flex flex-col space-y-4">
+        <input
+          type="text"
+          id="videoURL"
+          placeholder="لینک ویدیو را وارد کنید"
+          class="p-2 rounded-md border-2 border-gray-300 focus:border-gray-500 focus:ring-0"
+        />
+        <button
+          onclick="playVideo()"
+          class="px-6 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-700 focus:outline-none transition duration-200"
+        >
+          پخش
+        </button>
+      </div>
+
+      <div class="mt-6">
+        <video
+          controls
+          id="videoPlayer"
+          class="w-full h-auto bg-black rounded-md"
+        ></video>
+      </div>
+    </div>
+
+    <script>
+      function playVideo() {
+        var videoURL = document.getElementById("videoURL").value;
+        var videoPlayer = document.getElementById("videoPlayer");
+        videoPlayer.src = videoURL;
+        videoPlayer.load();
+        videoPlayer.play();
+      }
+    </script>
+  </body>
+</html>
